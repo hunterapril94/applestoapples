@@ -2,31 +2,44 @@ import './App.css';
 import Header from './components/Header';
 import Game from './components/Game';
 import Login from './components/Login';
-import { useCookies } from "react-cookie";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 function App() {
-  const [cookies, setCookie, removeCookie] = useCookies(['username'])
   const [username, setUsername] = useState('');
-  function handleChange(e) {
-    setUsername(e.target.value)
-  }
-  function handleSubmit(e) {
-    setCookie('Username', username, { path: '/' })
-    window.location.reload()
-    console.log(cookies)
-  }
-  function handleClick() {
-    removeCookie(['Username'])
-    console.log('clicked')
-    window.location.reload()
 
-  }
+  const [players, setPlayers] = useState([]);
+  
+    function handleChange(e) {
+      e.preventDefault()
+      // console.log(e.target.value)
+      setUsername(e.target.value)
+    }
+    function handleSubmit(e) {
+      e.preventDefault()
+      setPlayers([...players, username])
+      
+      cookies.set('Username', username)
+      // console.log(newUser)
+      console.log(players)
+      // console.log(cookies.get('Username'))
+    }
+    function handleClick(e) {
+      e.preventDefault()
+      cookies.remove('Username')
+      console.log('clicked')
+      window.location.reload(false)
+      
+    }
+  
+
+  
 
   return (
     <div className="App">
-      <Header username={cookies.Username} />
-      {cookies.Username ? <Game handleClick={handleClick} /> : <Login handleChange={handleChange} handleSubmit={handleSubmit} />}
+      <Header username={cookies.get('Username')} />
+      {cookies.get('Username') ? <Game handleClick={handleClick} players={players} /> : <Login handleChange={handleChange} handleSubmit={handleSubmit} />}
     </div>
   );
 }

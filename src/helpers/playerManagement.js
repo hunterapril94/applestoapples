@@ -1,0 +1,12 @@
+const icons = [
+  "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cfac0e69-e09c-46d8-bfd3-d460377572b5/davffx4-67f40b0f-3565-4df6-b7c0-d7e6adbb7a31.png/v1/fill/w_1024,h_1024,q_80,strp/overwatch___d_va__player_icon__by_yoshinoyoshie_davffx4-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcL2NmYWMwZTY5LWUwOWMtNDZkOC1iZmQzLWQ0NjAzNzc1NzJiNVwvZGF2ZmZ4NC02N2Y0MGIwZi0zNTY1LTRkZjYtYjdjMC1kN2U2YWRiYjdhMzEucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.LzGhcPTBzWSbRINCaB8XTOym4jAyJoGxhtG_2xwbp6Y",
+  "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/726a3088-35cc-46c1-b047-a1658cf6767c/de0o1wn-3b3505ca-63ed-4a0b-a239-65c845e84033.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzcyNmEzMDg4LTM1Y2MtNDZjMS1iMDQ3LWExNjU4Y2Y2NzY3Y1wvZGUwbzF3bi0zYjM1MDVjYS02M2VkLTRhMGItYTIzOS02NWM4NDVlODQwMzMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.MVWuR9JdZ3lfqoA4UPqh07duY1UNrDc2a-BNH9hz47Q",
+  "https://www.google.com/url?sa=i&url=https%3A%2F%2Foverwatch.fandom.com%2Fwiki%2FPlayer_Icons&psig=AOvVaw3YkMwEGyqnB8ByWL2Jqp6n&ust=1666395138931000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCLC_he777_oCFQAAAAAdAAAAABAO",
+  "https://static.wikia.nocookie.net/overwatch_gamepedia/images/f/f7/PI_Junkrat_Ahhhh%21.png/revision/latest/scale-to-width-down/250?cb=20160706115640"
+]
+
+export default function randomIcon() {
+  // to choose player icon
+  const i = Math.floor(Math.random() * icons.length)
+  return icons[i]
+}
