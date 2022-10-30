@@ -12,6 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static("public"));
 app.use(bodyparser.urlencoded({extended: true}));
+
+// helpers
+const {fetchGreen, deal, playCard} = require('./helpers')
 // get routes
 app.get( "/", (req, res) => {
   res.render('index')
@@ -30,7 +33,7 @@ app.post("/playCard", (req, res) => {
 
 })
 app.post("/selectWinner", (req, res)=>{
-  
+
 })
 
 
