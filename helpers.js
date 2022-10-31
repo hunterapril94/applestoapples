@@ -1,4 +1,4 @@
-const cards = [
+const deck = [
   {
     title: "Mark's Booty",
     description: "The answer to life, Universe and Everything"
@@ -40,16 +40,41 @@ const cards = [
     description: "Sit and have a seat and sit down and listen"
   },
 ]
-const cardsInPlay = []
-const players = []
+const cardsInPlay = [];
+const playedCards = [];
+const players = [];
+let turnNumber = 0;
 
 const fetchGreen = function() {
 
 }
-const deal = function() {
+const deal = function(numberOfCards) {
 
 }
 const playCard = function() {
 
 }
-module.exports = {fetchGreen, deal, playCard}
+const newTurn = function() {
+if(turnNumber===0) {
+  deal(7);
+  turnNumber += 1
+} else {
+  deal(1);
+  fetchGreen();
+  turnNumber += 1;
+  // player whose turn it is += 1
+}
+}
+const areAllCardsIn = function() {
+  if(playedCards.length !== players.length -1) {
+    return;
+  } else {
+    // display cardsInPlay for player whose turn it is
+  }
+}
+
+const reset = function() {
+
+}
+
+module.exports = {fetchGreen, playCard, newTurn, areAllCardsIn, reset}

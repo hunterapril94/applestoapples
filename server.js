@@ -14,7 +14,7 @@ app.use(express.static("public"));
 app.use(bodyparser.urlencoded({extended: true}));
 
 // helpers
-const {fetchGreen, deal, playCard} = require('./helpers')
+const {fetchGreen, playCard, newTurn, areAllCardsIn, reset} = require('./helpers')
 // get routes
 app.get( "/", (req, res) => {
   res.render('index')
@@ -24,10 +24,10 @@ app.post("/newPlayer", (req, res) => {
 
 })
 app.post("/newGame", (req, res) => {
-
+  reset();
 })
-app.post("/deal", (req, res) => {
-
+app.post("/newTurn", (req, res) => {
+  newTurn();
 })
 app.post("/playCard", (req, res) => {
 
