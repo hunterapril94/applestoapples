@@ -74,7 +74,7 @@ const areAllCardsIn = function() {
 }
 
 const reset = function() {
-
+console.log(deck)
 }
 
 module.exports = {fetchGreen, playCard, newTurn, areAllCardsIn, reset}

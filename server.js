@@ -25,6 +25,7 @@ app.post("/newPlayer", (req, res) => {
 })
 app.post("/newGame", (req, res) => {
   reset();
+  res.redirect('/')
 })
 app.post("/newTurn", (req, res) => {
   newTurn();
